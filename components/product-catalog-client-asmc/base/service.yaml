@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: product-catalog-client-asmc
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: product-catalog-client-asmc
+    app.kubernetes.io/part-of: product-catalog
+  name: product-catalog-client-asmc
+  namespace: gnunn-tenant
+spec:
+  ports:
+  - port: 3001
+    targetPort: 3001
+  selector:
+    app.kubernetes.io/instance: product-catalog-client-asmc
+status:
+  loadBalancer: {}
